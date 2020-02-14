@@ -32,7 +32,12 @@ pipeline {
                 }      
                
             }  
-        }  
+        } 
+	 stage('Chck python') {
+            steps {
+                sh "which python"
+            }  
+        }      
          
       }
     }
