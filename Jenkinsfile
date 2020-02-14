@@ -3,7 +3,7 @@ def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
 	agent {
 		kubernetes {
-		 label 'jenkins'	
+		 label 'jnlp'	
 		}
 	}
      environment { 
