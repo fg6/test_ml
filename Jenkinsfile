@@ -30,6 +30,7 @@ pipeline {
 	                /* Check if dvc repo exists */
 	                try {
 	                	sh "git ls-remote http://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+						}
 	                catch (exc) {
 	                	/* DVC repo does not exist: create from template*/
                         echo "non lo trovo"
@@ -41,8 +42,7 @@ pipeline {
          
       }
     }
-}	
-
+}
 
 
 
