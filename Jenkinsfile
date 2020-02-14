@@ -2,8 +2,8 @@ def repo = "${REPO}_dvc"
 def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
 	agent {
-		kubernetes {
-		 label 'jenkins'	
+		openshift {
+		 label 'python'	
 		}
 	}
      environment { 
