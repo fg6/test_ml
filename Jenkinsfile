@@ -1,5 +1,5 @@
 def repo = "${REPO}_DVC"
-def gitrepo = "github.com/Aimp91/${repo}.git"
+def gitrepo = "github.com/Aimp91/${REPO}.git"
 pipeline {
     agent any
      environment { 
