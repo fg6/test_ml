@@ -1,7 +1,7 @@
 def repo = "${REPO}_dvc"
 def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
-	agent docker { image 'pydock' }
+	agent docker { image 'maven:pydock' }
      environment { 
         REPO_CREDS = credentials("gitcreds1")
      }
