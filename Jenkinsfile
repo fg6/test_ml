@@ -3,7 +3,7 @@ def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
 	agent {
 		docker {
-		imsge 'pyslave'
+		image 'pyslave'
 		}
 	}
      environment { 
