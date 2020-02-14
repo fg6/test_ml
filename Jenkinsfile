@@ -3,7 +3,8 @@ def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
 	agent {
 		docker {
-		imsge 'pyslave'}
+		imsge 'pyslave'
+		}
 	}
      environment { 
         REPO_CREDS = credentials("gitcreds1")
