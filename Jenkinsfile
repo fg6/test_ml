@@ -1,5 +1,5 @@
-def repo = "${REPO}_DVC"
-def gitrepo = "github.com/Aimp91/${REPO}.git"
+def repo = "${REPO}"
+def gitrepo = " http://github.com/Aimp91/${repo}.git"
 pipeline {
     agent any
      environment { 
@@ -19,7 +19,7 @@ pipeline {
          stage('Check cred') {
             steps {
                 //sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
-                sh "git ls-remote http://github.com/Aimp91/test_ml.git"
+                sh "git ls-remote ${gitrepo}"
             }  
         }  
       }
