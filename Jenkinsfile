@@ -1,7 +1,7 @@
 def repo = "${REPO}_dvc"
 def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
-	agent any
+	agent {label 'pyslave'}
      environment { 
         REPO_CREDS = credentials("gitcreds1")
      }
@@ -35,7 +35,7 @@ pipeline {
         } 
 	 stage('Chck python') {
             steps {
-                sh "which3 python"
+                sh "which python"
 		sh "python3 --version"
 		 //sh "which pip"   
 		 // sh "which virtualenv"  
