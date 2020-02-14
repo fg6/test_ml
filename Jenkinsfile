@@ -1,7 +1,11 @@
 def repo = "${REPO}_dvc"
 def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
-	agent {docker 'pyslave'}
+	agent {
+		docker {
+	image  'pyslave'
+		}
+	      }
      environment { 
         REPO_CREDS = credentials("gitcreds1")
      }
