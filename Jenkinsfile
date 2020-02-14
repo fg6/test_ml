@@ -18,7 +18,7 @@ pipeline {
         }
          stage('Check cred') {
             steps {
-                echo "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+                sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
                 //sh "git ls-remote ${gitrepo}"
             }  
         }  
