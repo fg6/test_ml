@@ -18,7 +18,8 @@ pipeline {
         }
          stage('Check cred') {
             steps {
-                sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+                //sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+                sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@github.com/Aimp91/test_ml.git"
             }  
         }  
       }
