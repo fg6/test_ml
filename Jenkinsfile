@@ -16,13 +16,7 @@ pipeline {
                 echo "${repo}"
             }  
         }
-         stage('Check cred') {
-            steps {
-                sh "git ls-remote https://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
-                //sh "git ls-remote ${gitrepo}"
-            }  
-        }
-         stage('try catch check') {
+	 stage('try catch check') {
             steps {
                 script {
 	                /*  Clone git Repo II */
