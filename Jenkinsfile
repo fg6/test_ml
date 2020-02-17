@@ -35,7 +35,7 @@ pipeline {
         } 
 	 stage('Chck python') {
             steps {
-                sh "which python"
+                sh "which python3"
 		sh "python --version"
 		 //sh "which pip"   
 		 // sh "which virtualenv"  
