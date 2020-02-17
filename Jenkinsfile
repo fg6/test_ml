@@ -1,11 +1,7 @@
 def repo = "${REPO}_dvc"
 def gitrepo = "github.com/Aimp91/${repo}.git"
 pipeline {
-	agent {
-		kubernetes {
-		 label 'jnlp'	
-		}
-	}
+	agent any
      environment { 
         REPO_CREDS = credentials("gitcreds1")
      }
