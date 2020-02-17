@@ -27,7 +27,14 @@ pipeline {
 						}
 	                catch (exc) {
 	                	/* DVC repo does not exist: create from template*/
-                        echo "non lo trovo"
+	                	sh "cd dvc_pipe; git clone http://$REPO_CREDS_USR:$REPO_CREDS_PSW@nttdata_os_codes.git"
+	                	
+	                	sh "cd dvc_pipe/nttdata_os_codes; git checkout -b ${branch} origin/${branch}"
+	                	sh "cd dvc_pipe/nttdata_os_codes; git remote set-url origin http://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+	                	
+	                	sh "cd dvc_pipe/nttdata_os_codes; git push http://$REPO_CREDS_USR:$REPO_CREDS_PSW@${gitrepo}"
+	                	sh "rm -rf dvc_pipe/nttdata_os_codes"
+
                     }
                 }      
                
@@ -35,7 +42,7 @@ pipeline {
         } 
 	 stage('Chck python') {
             steps {
-                sh "which python3"
+                sh "which python"
 		sh "python --version"
 		 //sh "which pip"   
 		 // sh "which virtualenv"  
